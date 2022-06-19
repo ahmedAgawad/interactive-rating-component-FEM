@@ -1,0 +1,253 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	--orange: hsl(25, 97%, 53%);
+	--white: hsl(0, 0%, 100%);
+	--light-grey: hsl(217, 12%, 63%);
+	--medium-grey: hsl(216, 12%, 54%);
+	--dark-blue: hsl(213, 19%, 18%);
+	--very-dark-blue: hsl(216, 12%, 8%);
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	display: flex;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+	padding: 0px 21px;
+	background-color: var(--very-dark-blue);
+	font-family: "Overpass", sans-serif;
+}
+
+img {
+	display: block;
+}
+
+h3 {
+	color: var(--white);
+	font-size: 24px;
+	font-weight: 500;
+}
+
+p {
+	color: var(--light-grey);
+	font-size: 14.5px;
+}
+
+button {
+	font-family: "Overpass", sans-serif;
+}
+
+main {
+	max-width: 410px;
+	position: relative;
+}
+
+main .rateCard {
+	padding: 24px 22px 32px;
+	border-radius: 17.5px;
+	background-image: linear-gradient(to bottom, hsl(215, 20%, 17%), hsl(216, 24%, 12%));
+}
+
+.rateCard .starImg {
+	width: 44px;
+	margin-bottom: 17.5px;
+	padding: 14px;
+	border-radius: 50%;
+	background-color: hsl(210, 19%, 19%);
+}
+
+.rateCard h3 {
+	margin-bottom: 14px;
+}
+
+.rateCard p {
+	margin-bottom: 30px;
+	line-height: 1.5;
+}
+
+form .inputRadios {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 21px;
+}
+
+.inputRadios .radioBox {
+	position: relative;
+}
+
+.inputRadios input {
+	width: 46px;
+	height: 46px;
+	position: relative;
+	z-index: 100;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.inputRadios .number {
+	height: 44px;
+	width: 42px;
+	border-radius: 50%;
+	position: absolute;
+	top: 2.5px;
+	left: 2.5px;
+	transition: background-color 200ms ease-in-out;
+	font-size: 14px;
+	color: var(--medium-grey);
+	font-weight: 600;
+	line-height: 47.5px;
+	text-align: center;
+	background-color: hsl(210, 19%, 18%);
+}
+
+.inputRadios input:checked + .number {
+	background-color: var(--medium-grey);
+	color: var(--white);
+}
+
+.inputRadios input:hover + .number {
+	background-color: var(--orange);
+	color: var(--white);
+}
+
+form button {
+	width: 100%;
+	padding: 14px 10px 13px 10px;
+	border: none;
+	border-radius: 25px;
+	transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+	color: var(--white);
+	font-weight: 500;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+	background-color: var(--orange);
+	cursor: pointer;
+}
+
+form button:hover {
+	background-color: var(--white);
+	color: var(--orange);
+}
+
+main .thanksCard {
+	background-image: linear-gradient(to bottom, hsl(215, 20%, 17%), hsl(216, 24%, 12%));
+	padding: 30px 25px 40px;
+	text-align: center;
+	border-radius: 15px;
+	opacity: 0;
+	position: absolute;
+	z-index: -2;
+	top: 0;
+	transition: opacity 500ms ease-in-out;
+}
+
+main .thanksCard.show {
+	opacity: 1;
+	z-index: 2;
+}
+
+.thanksCard img {
+	width: 150px;
+	margin: 0 auto 24px auto;
+}
+
+.thanksCard .ratingText {
+	background-color: hsl(216, 16%, 19%);
+	width: fit-content;
+	margin: 0 auto 25px auto;
+	border-radius: 25px;
+	color: hsl(25, 59%, 47%);
+	font-size: 15px;
+	padding: 6px 11px;
+}
+
+.thanksCard h3 {
+	margin-bottom: 16px;
+	font-size: 25px;
+}
+
+.thanksCard p {
+	line-height: 1.7;
+}
+
+footer {
+	position: absolute;
+	bottom: 30px;
+	text-align: center;
+	color: var(--white);
+}
+
+.attribution {
+	font-size: 12px;
+	text-align: center;
+}
+.attribution a {
+	color: var(--orange);
+}
+
+@media (min-width: 420px) {
+	body {
+		padding: 10px 25px;
+	}
+
+	main .rateCard {
+		padding: 30px 35px 30px 30px;
+		border-radius: 30px;
+	}
+
+	.rateCard .starImg {
+		width: 45px;
+		margin-bottom: 30px;
+	}
+
+	.rateCard h3 {
+		font-size: 28px;
+	}
+
+	.radioBox input {
+		width: 52.5px;
+		height: 52.5px;
+	}
+
+	.radioBox .number {
+		width: 50px;
+		height: 50px;
+		left: 0;
+		top: 0;
+		line-height: 55px;
+		font-size: 16.5px;
+	}
+
+	form button {
+		font-size: 15.5px;
+	}
+
+	main .thanksCard {
+		padding: 45px 49px 50px 37px;
+		border-radius: 30px;
+	}
+
+	.thanksCard img {
+		margin-bottom: 30px;
+	}
+
+	.thanksCard .ratingText {
+		margin-bottom: 30px;
+	}
+
+	.thanksCard h3 {
+		font-size: 26px;
+	}
+}
